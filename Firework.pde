@@ -28,8 +28,13 @@ class Firework{
       p.applyGravity(0, 0.12);
       if(p.velocityY >= 0){
         exploded = true;
-        for(int i = 0; i < 100; i++){
-          particles.add(new Particle(p.x, p.y, false, p.rgb));
+        float angle = 0.0f;
+        
+        for( ; angle <= TWO_PI; angle += 0.1){
+          float r = 1.2;
+          float hx = r * 14 * pow(sin(angle), 3);
+          float hy = -r*(13 * cos(angle) - 4*cos(2*angle) - 2*cos(3*angle)- cos(4*angle));
+          particles.add(new Particle(p.x + hx, p.y + hy, false, p.rgb));
         }
       }
     }else{

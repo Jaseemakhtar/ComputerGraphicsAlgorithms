@@ -23,10 +23,11 @@ class Particle{
       b = floor(random(255));
       this.rgb[2] = b;
     }else{
-      velocityY = random(-6, 6);
-      velocityX = random(-6, 6);
+      velocityY = random(-4, 4);
+      velocityX = random(-4, 4);
       velocityY = velocityY * 0.15;
       velocityX = velocityX * 0.15;
+     
       r = rgb[0];
       
       g = rgb[1];
